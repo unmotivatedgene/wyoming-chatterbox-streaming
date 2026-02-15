@@ -84,6 +84,24 @@ async with AsyncTcpClient("localhost", 10200) as client:
 3. Enter a name for the voice
 4. Use the voice in synthesis
 
+## Paralinguistic Tags
+
+Chatterbox supports embedded audio tags for natural speech effects:
+
+| Tag | Description | Example Usage |
+|-----|-------------|---------------|
+| `[clear throat]` | Throat clearing sound | Start of speech |
+| `[sigh]` | Sighing | Expressing frustration |
+| `[shush]` | Shushing sound | Quieting someone |
+| `[cough]` | Coughing | Natural interruption |
+| `[groan]` | Groaning | Expressing discomfort |
+| `[sniff]` | Sniffing | Emotional or physical response |
+| `[gasp]` | Gasping | Surprise or shock |
+| `[chuckle]` | Light laughter | Mild amusement |
+| `[laugh]` | Full laughter | Strong amusement |
+
+Example: "Well, [sigh] I guess that's it. [laugh] Thanks for listening!"
+
 ## API
 
 ### POST /api/tts
