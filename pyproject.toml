@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wyoming-chatterbox-streaming"
+version = "1.0.0"
+description = "Wyoming protocol server for Chatterbox-Turbo TTS with streaming support"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Taylor", email = "taylor@example.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+]
+
+dependencies = [
+    "chatterbox-tts",
+    "wyoming",
+    "sentence-stream",
+    "aiohttp",
+    "numpy",
+    "torch",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+wyoming-chatterbox-streaming = "wyoming_chatterbox.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+wyoming_chatterbox = "src/wyoming_chatterbox"

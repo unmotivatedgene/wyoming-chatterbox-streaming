@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  wyoming-chatterbox:
+    build: .
+    image: wyoming-chatterbox:latest
+    container_name: wyoming-chatterbox
+    ports:
+      - "10200:10200"  # Wyoming protocol
+      - "5000:5000"    # Web interface / HTTP API
+    volumes:
+      - ./data:/data
+    environment:
+      - HF_TOKEN=${HF_TOKEN:-}
+      - DEVICE=${DEVICE:-cpu}
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

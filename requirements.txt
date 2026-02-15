@@ -1,0 +1,9 @@
+# Wyoming Chatterbox dependencies
+chatterbox-tts>=0.1.0
+wyoming>=1.0.0
+sentence-stream>=0.2.0
+aiohttp>=3.9.0
+numpy>=1.24.0
+
+# For GPU support, install torch with CUDA:
+# pip install torch torchaudio --index-url https://download.pytorch.org/whl/cu121
