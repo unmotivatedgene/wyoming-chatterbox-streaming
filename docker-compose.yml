@@ -1,10 +1,10 @@
 version: "3.8"
 
 services:
-  wyoming-chatterbox:
+  wyoming-chatterbox-streaming:
     build: .
-    image: wyoming-chatterbox:latest
-    container_name: wyoming-chatterbox
+    image: wyoming-chatterbox-streaming:latest
+    container_name: wyoming-chatterbox-streaming
     ports:
       - "10200:10200"  # Wyoming protocol
       - "5000:5000"    # Web interface / HTTP API
@@ -12,7 +12,7 @@ services:
       - ./data:/data
     environment:
       - HF_TOKEN=${HF_TOKEN:-}
-      - DEVICE=${DEVICE:-cpu}
+      - DEVICE=${DEVICE:-cuda}
     restart: unless-stopped
     deploy:
       resources:
